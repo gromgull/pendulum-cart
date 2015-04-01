@@ -7,32 +7,35 @@
 
 
 $fn = 50; 
-
-union() { 
 difference () { 
-    cylinder(h=15.5,r=5);
-    translate([0,0,-0.5]) cylinder(h=17,r=2.6); 
-}
+union() { 
+//top bumb
+cylinder(h=15.5,r=5);
+
 
 translate([0,0,2.7])
     mypulley();
 
 translate([0,0,11])
+    cylinder(4.5,8,8);
 
-gear (
-	number_of_teeth=46,
-	circular_pitch=72,
-	pressure_angle=28,
-	clearance = 0.2,
-	gear_thickness=2,
-	rim_thickness=4,
-	rim_width=1,
-	hub_thickness=4,
-	hub_diameter=6,
-	bore_diameter=5.2,
-	circles=0,
-	involute_facets=0);
+translate([0,0,11])
+    gear (
+        number_of_teeth=46,
+        circular_pitch=72,
+        pressure_angle=28,
+        clearance = 0.2,
+        gear_thickness=2,
+        rim_thickness=4.5,
+        rim_width=1,
+        hub_thickness=4,
+        hub_diameter=6,
+        bore_diameter=5.2,
+        circles=0,
+        involute_facets=0);
     
+}
+    translate([0,0,-0.5]) cylinder(h=17,r=2.6); 
 }
 
     // tuneable constants
